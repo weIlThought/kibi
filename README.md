@@ -54,6 +54,6 @@ So behältst du im Kampf immer den Überblick.
 Pull Requests, Bug Reports und Feature-Ideen sind jederzeit willkommen!
 Schau in die Issues und hilf mit, Kibi noch besser zu machen.
 
-### 📜 Lizenz
+### 📜 Credits
 
-Dieses Projekt steht unter der MIT Lizenz
+Original Owner: https://github.com/coltonb/pokemon-showdown-type-helper
