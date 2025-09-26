@@ -1,0 +1,16 @@
+@media (prefers-color-scheme: dark) {
+  [data-psth-tag="stats"],
+  [data-psth-tag="damage-relations"],
+  [data-psth-tag^="damage-relation-x"] {
+    background: #222;
+    color: #eee;
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+  [data-psth-tag="damage-relation-text"] {
+    color: #ffcb05;
+  }
+  img.pixelated {
+    filter: brightness(0.8) contrast(1.2);
+  }
+}
