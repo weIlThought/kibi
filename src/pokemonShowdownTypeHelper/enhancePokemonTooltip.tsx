@@ -13,12 +13,11 @@ export default async function enhancePokemonTooltip(
   tooltipHTML: string,
   pokemon: Pokemon,
 ): Promise<string> {
-  // Darkmode CSS einfügen, falls noch nicht vorhanden
   if (!document.getElementById("psth-darkmode-css")) {
     const style = document.createElement("link");
     style.rel = "stylesheet";
-    style.href = browser.runtime.getURL("tooltip-darkmode.css");
     style.id = "psth-darkmode-css";
+    style.href = "tooltip-darkmode.css";
     document.head.appendChild(style);
   }
 
