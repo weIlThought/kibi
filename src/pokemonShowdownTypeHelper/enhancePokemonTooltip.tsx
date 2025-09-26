@@ -11,7 +11,7 @@ const PokeAPI = new Pokedex();
  */
 export default async function enhancePokemonTooltip(
   tooltipHTML: string,
-  pokemon: Pokemon
+  pokemon: Pokemon,
 ): Promise<string> {
   // Darkmode CSS einfügen, falls noch nicht vorhanden
   if (!document.getElementById("psth-darkmode-css")) {
@@ -36,7 +36,7 @@ export default async function enhancePokemonTooltip(
     <TooltipAdditions
       damageRelations={await getTypesGroupedByDamageMultiplier(pokemon)}
       pokemon={pokemon}
-    />
+    />,
   )
     .reverse()
     .map((element: HTMLElement) => {
@@ -51,29 +51,29 @@ export default async function enhancePokemonTooltip(
  * @returns A map of each multiplier to the types affected.
  */
 async function getTypesGroupedByDamageMultiplier(
-  pokemon: Pokemon
+  pokemon: Pokemon,
 ): Promise<TypesGroupedByDamageMultiplier> {
   return Array.from(
     (
       await Promise.all(
         pokemon
           .getTypeList()
-          .map((type) => PokeAPI.getTypeByName(type.toLowerCase()))
+          .map((type) => PokeAPI.getTypeByName(type.toLowerCase())),
       )
     )
       .map((type) => type.damage_relations)
       .reduce((acc, damageRelation) => {
         damageRelation["double_damage_from"].map((type) =>
-          acc.set(type.name, (acc.get(type.name) ?? 1) * 2)
+          acc.set(type.name, (acc.get(type.name) ?? 1) * 2),
         );
         damageRelation["half_damage_from"].map((type) =>
-          acc.set(type.name, (acc.get(type.name) ?? 1) * 0.5)
+          acc.set(type.name, (acc.get(type.name) ?? 1) * 0.5),
         );
         damageRelation["no_damage_from"].map((type) => acc.set(type.name, 0));
 
         return acc;
       }, new Map<string, number>())
-      .entries()
+      .entries(),
   ).reduce((acc, [type, multiplier]) => {
     if (multiplier === 1) {
       return acc;

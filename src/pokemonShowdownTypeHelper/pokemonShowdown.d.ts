@@ -22,14 +22,14 @@ interface BattleTooltips {
       clientPokemon: Pokemon | null,
       serverPokemon: Object | null,
       isActive?: boolean,
-      illusionIndex?: number
+      illusionIndex?: number,
     ): string;
 
     placeTooltip(
       innerHTML: string,
       hoveredElem?: HTMLElement,
       notRelativeToParent?: boolean,
-      type?: string
+      type?: string,
     ): boolean | undefined;
   };
 }

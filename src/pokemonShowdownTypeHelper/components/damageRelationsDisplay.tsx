@@ -6,7 +6,7 @@ declare var Dex: Dex;
 export default class DamageRelationsDisplay extends Component {
   get damageRelations() {
     return Array.from(
-      useTooltipAdditionsContext().damageRelations.entries()
+      useTooltipAdditionsContext().damageRelations.entries(),
     ).sort((a, b) => b[0] - a[0]);
   }
 

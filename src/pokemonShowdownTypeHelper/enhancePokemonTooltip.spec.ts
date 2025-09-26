@@ -80,14 +80,14 @@ describe("enhanceTooltip", () => {
     expect(statsElement).not.toBeNull();
 
     for (const [stat, value] of Object.entries(
-      pokemon.getSpecies().baseStats
+      pokemon.getSpecies().baseStats,
     )) {
       const statElement = getElement(statsElement, stat)!;
 
       expect(statElement).not.toBeNull();
 
       expect(statElement.textContent).toEqual(
-        `${StatDisplay.STAT_NAME_MAP[stat]}:${value}`
+        `${StatDisplay.STAT_NAME_MAP[stat]}:${value}`,
       );
     }
   });
@@ -107,31 +107,31 @@ describe("enhanceTooltip", () => {
 
     expect(damageRelationsContainer).not.toBeNull();
     expect(damageRelationsContainer.children.length).toEqual(
-      Object.keys(expectedDamageRelations).length
+      Object.keys(expectedDamageRelations).length,
     );
 
     for (const [multiplier, types] of Object.entries(expectedDamageRelations)) {
       const damageRelationContainer = getElement(
         container,
-        `damage-relation-x${multiplier}`
+        `damage-relation-x${multiplier}`,
       )!;
 
       expect(damageRelationContainer).not.toBeNull();
 
       const damageRelationTextContainer = getElement(
         damageRelationContainer,
-        "damage-relation-text"
+        "damage-relation-text",
       )!;
 
       expect(damageRelationTextContainer).not.toBeNull();
       expect(damageRelationTextContainer.textContent).toEqual(
-        `x${multiplier}:`
+        `x${multiplier}:`,
       );
       expect(damageRelationContainer.children.length).toEqual(types.length + 1);
 
       for (const type of types) {
         const typeElement = damageRelationContainer.querySelector(
-          `[alt=${type}]`
+          `[alt=${type}]`,
         );
         expect(typeElement).not.toBeNull();
       }
