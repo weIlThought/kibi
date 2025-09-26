@@ -14,3 +14,18 @@
     filter: brightness(0.8) contrast(1.2);
   }
 }
+
+.ps-tooltip,
+.ps-tooltip * {
+  background-color: #1e1e1e !important;
+  color: #f5f5f5 !important;
+}
+
+.ps-tooltip h2 {
+  color: #ffffff !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+.ps-tooltip .type-icon {
+  border: 1px solid #555 !important;
+}
