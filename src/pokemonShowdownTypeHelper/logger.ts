@@ -1,5 +1,5 @@
 export class Logger {
-  static readonly MESSAGE_PREFIX = "[Pokemon Showdown Type Helper]";
+  static readonly MESSAGE_PREFIX = "[Kibi the Pokemon Showdown Tooltip Helper]";
 
   static debug(...args: any[]) {
     console.debug(Logger.MESSAGE_PREFIX, ...args);

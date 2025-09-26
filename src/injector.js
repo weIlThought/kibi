@@ -6,7 +6,7 @@ var browser = require("webextension-polyfill");
  */
 function injectScript() {
   const script = document.createElement("script");
-  script.src = browser.runtime.getURL("pokemonShowdownTypeHelper.js");
+  script.src = browser.runtime.getURL("KibithePokemonShowdownTooltipHelper.js");
   document.body.appendChild(script);
 }
 
