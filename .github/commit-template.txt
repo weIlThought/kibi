@@ -1,0 +1,17 @@
+# -----------------------------
+# Commit Message Template
+# -----------------------------
+# Format: <type>(optional scope): <kurze Beschreibung)
+# Typen: feat | fix | chore | docs | refactor | test
+# Scope ist optional, z.B. (ui), (api), (ci)
+# Kurz und präzise (1 Satz)
+#
+# Beispiele:
+# feat(ui): neue Login-Seite hinzugefügt
+# fix(api): Absturz beim Logout behoben
+# chore: Dependencies aktualisiert
+# -----------------------------
+
+type(scope): 
+
+# Kurze Beschreibung:
