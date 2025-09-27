@@ -1,6 +1,6 @@
 {
-  "name": "Kibi the Pokemon Showdown Tooltip Helper",
-  "description": "Enhances Pokemon Showdown tooltips with additional information, including type weaknesses and stats.",
+  "name": "Kibi",
+  "description": "Kibi enhances tooltips on Pokémon Showdown with additional information – including type weaknesses and stats. Keep full control of your battles at a glance.",
   "version": "0.0.1",
   "manifest_version": 3,
   "icons": {
@@ -10,7 +10,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["KibithePokemonShowdownTooltipHelper.js"],
+      "resources": ["Kibi.js"],
       "matches": ["https://play.pokemonshowdown.com/*", "https://*.psim.us/*"]
     }
   ],

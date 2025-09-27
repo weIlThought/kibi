@@ -37,7 +37,7 @@ jobs:
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
-          name: kibi-the-pokemon-showdown-tooltip-helper
+          name: kibi
           path: dist
   Release:
     needs:
@@ -50,12 +50,12 @@ jobs:
       - name: Download build
         uses: actions/download-artifact@v3
         with:
-          name: kibi-the-pokemon-showdown-tooltip-helper
-          path: kibi-the-pokemon-showdown-tooltip-helper.zip
+          name: kibi
+          path: kibi.zip
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: kibi-the-pokemon-showdown-tooltip-helper.zip
+          files: kibi.zip
   Format:
     runs-on: ubuntu-latest
     steps:

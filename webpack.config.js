@@ -7,8 +7,7 @@ module.exports = (mode) => {
     devtool: "cheap-module-source-map",
     entry: {
       injector: "./src/injector.js",
-      KibithePokemonShowdownTooltipHelper:
-        "./src/KibithePokemonShowdownTooltipHelper",
+      Kibi: "./src/Kibi",
     },
     module: {
       rules: [
@@ -29,9 +28,6 @@ module.exports = (mode) => {
           { from: "./icons/icon48.png" },
           { from: "./icons/icon16.png" },
           { from: "./icons/icon128.png" },
-          {
-            from: "./src/KibithePokemonShowdownTooltipHelper/components/tooltip-darkmode.css",
-          },
         ],
       }),
     ],

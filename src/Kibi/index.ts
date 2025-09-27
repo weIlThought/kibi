@@ -8,7 +8,7 @@ class PokemonShowdownMethods {
   static placeTooltip = BattleTooltips.prototype.placeTooltip;
 }
 
-class KibithePokemonShowdownTooltipHelper {
+class Kibi {
   static Overrides = class {
     /**
      * Override that injects additional information into the tooltip HTML.
@@ -55,14 +55,13 @@ class KibithePokemonShowdownTooltipHelper {
    */
   static bootstrap() {
     // The override method is casted as any to permit assignment despite changing from sync to async function.
-    BattleTooltips.prototype.showPokemonTooltip =
-      KibithePokemonShowdownTooltipHelper.Overrides.showPokemonTooltip as any;
+    BattleTooltips.prototype.showPokemonTooltip = Kibi.Overrides
+      .showPokemonTooltip as any;
 
-    BattleTooltips.prototype.placeTooltip =
-      KibithePokemonShowdownTooltipHelper.Overrides.placeTooltip;
+    BattleTooltips.prototype.placeTooltip = Kibi.Overrides.placeTooltip;
 
     Logger.log("Successfully initialized.");
   }
 }
 
-KibithePokemonShowdownTooltipHelper.bootstrap();
+Kibi.bootstrap();
