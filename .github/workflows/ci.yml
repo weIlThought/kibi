@@ -2,7 +2,11 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
   pull_request:
+  release:
+    types: [created]
 
 name: CI
 
@@ -16,6 +20,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run lint
+
   Test:
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +30,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm test
+
   Build:
     runs-on: ubuntu-latest
     steps:
@@ -34,11 +40,14 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build
+      - name: Zip build
+        run: zip -r kibi.zip dist
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
           name: kibi
-          path: dist
+          path: kibi.zip
+
   Release:
     needs:
       - Test
@@ -47,15 +56,27 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Download build
         uses: actions/download-artifact@v3
         with:
           name: kibi
-          path: kibi.zip
-      - name: Create Release
+          path: .
+      - name: Generate Changelog
+        id: changelog
+        uses: mikepenz/release-changelog-builder-action@v4
+        with:
+          configuration: ".github/changelog-config.json"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          body: ${{ steps.changelog.outputs.changelog }}
           files: kibi.zip
+
   Format:
     runs-on: ubuntu-latest
     steps:
