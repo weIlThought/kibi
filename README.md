@@ -1,59 +1,12 @@
-# Kibi – The Pokémon Showdown Tooltip Helper
+# Kibi – Pokémon Showdown Tooltip Helper (DE / EN)
 
-<p align="center">
-  <img src="icons/icon128.png" height="200" alt="Extension Icon">
-</p>
-
-**Kibi** erweitert die Tooltips von [Pokémon Showdown](https://pokemonshowdown.com) um zusätzliche Informationen – inklusive Typenschwächen und Statuswerte.  
-So behältst du im Kampf immer den Überblick.
-
----
-
-## ✨ Features
-
-- 🔍 Zeigt **Typ-Schwächen und Resistenzen** direkt im Tooltip
-- 📊 Ergänzt **Basiswerte (Stats)** zur schnellen Übersicht
-- 🎨 **Darkmode-Unterstützung** für bessere Lesbarkeit
-- ⚡ Funktioniert nahtlos in Pokémon Showdown
-
----
-
-## 📸 Screenshots
-
-<p align="center">
-  <img src="docs/screenshot.1.png" height="250" alt="Screenshot 1">
-  <img src="docs/screenshot.2.png" height="250" alt="Screenshot 2">
-</p>
-
----
-
-## ⚙️ Installation
-
-### 🔨 Build & Install from Source
-
-1. Repository klonen und Abhängigkeiten installieren:
-
-   ```bash
-   npm install
-   npm run build
-   ```
-
-2. Das gebaute unpacked extension befindet sich im Ordner dist/.
-
-3. In deinem Browser (z. B. Chrome, Edge oder Opera) unter
-   Erweiterungen → Entpackte Erweiterung laden → den dist/-Ordner auswählen.
-
-### 📌 Hinweise
-
-- Getestet mit Chrome und Firefox (sollte auch in Chromium-basierten Browsern funktionieren).
-
-- Pokémon-Daten werden live aus der PokéAPI geladen.
-
-### 🤝 Mitwirken
-
-Pull Requests, Bug Reports und Feature-Ideen sind jederzeit willkommen!
-Schau in die Issues und hilf mit, Kibi noch besser zu machen.
-
-### 📜 Credits
-
-Original Owner: https://github.com/coltonb/pokemon-showdown-type-helper
+| 🇩🇪 Deutsch | 🇺🇸 English |
+|------------|------------|
+| **Kibi – Der Pokémon Showdown Tooltip Helfer**<br><img src="icons/icon128.png" height="100"> | **Kibi – The Pokémon Showdown Tooltip Helper**<br><img src="icons/icon128.png" height="100"> |
+| **Beschreibung:**<br>Kibi erweitert die Tooltips von [Pokémon Showdown](https://pokemonshowdown.com) um zusätzliche Informationen – inklusive Typenschwächen und Statuswerte. So behältst du im Kampf immer den Überblick. | **Description:**<br>Kibi enhances tooltips on [Pokémon Showdown](https://pokemonshowdown.com) with additional information – including type weaknesses and stats. Keep full control of your battles at a glance. |
+| **✨ Features:**<br>- 🔍 Zeigt Typ-Schwächen und Resistenzen direkt im Tooltip<br>- 📊 Ergänzt Basiswerte (Stats) für schnelle Übersicht<br>- 🎨 Darkmode-Unterstützung<br>- ⚡ Funktioniert nahtlos in Pokémon Showdown | **✨ Features:**<br>- 🔍 Shows type weaknesses and resistances directly in the tooltip<br>- 📊 Adds base stats for quick overview<br>- 🎨 Dark mode support<br>- ⚡ Works seamlessly in Pokémon Showdown |
+| **📸 Screenshots:**<br><img src="docs/screenshot.1.png" height="150"> <img src="docs/screenshot.2.png" height="150"> | **📸 Screenshots:**<br><img src="docs/screenshot.1.png" height="150"> <img src="docs/screenshot.2.png" height="150"> |
+| **⚙️ Installation:**<br>**Aus Quellcode bauen & installieren:**<br>1. Repository klonen und Abhängigkeiten installieren:<br>```npm install``` ```npm run build```<br>2. Die gebaute, entpackte Erweiterung befindet sich im Ordner `dist/`.<br>3. Browser: Erweiterungen → Entpackte Erweiterung laden → `dist/` auswählen. | **⚙️ Installation:**<br>**Build & Install from Source:**<br>1. Clone repository and install dependencies:<br>```npm install``` ```npm run build```<br>2. Built unpacked extension located in `dist/`.<br>3. Browser: Extensions → Load unpacked → select `dist/`. |
+| **📌 Hinweise:**<br>- Getestet mit Chrome und Opera (funktioniert auch in Chromium-Browsern)<br>- Pokémon-Daten werden live aus der PokéAPI geladen | **📌 Notes:**<br>- Tested on Chrome and Opera (should also work on Chromium browsers)<br>- Pokémon data is loaded live from the PokéAPI |
+| **🤝 Mitwirken:**<br>Pull Requests, Bug Reports und Feature-Ideen sind willkommen! Schau in die Issues und hilf, Kibi noch besser zu machen. | **🤝 Contributing:**<br>Pull requests, bug reports, and feature ideas are welcome! Check issues and help make Kibi even better. |
+| **📜 Credits:**<br>Original Owner: [coltonb](https://github.com/coltonb/pokemon-showdown-type-helper) | **📜 Credits:**<br>Original Owner: [coltonb](https://github.com/coltonb/pokemon-showdown-type-helper) |
