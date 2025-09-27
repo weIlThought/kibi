@@ -1,5 +1,11 @@
 # Kibi – Pokémon Showdown Tooltip Helper (DE / EN)
 
+<p align="center">
+  <a href="https://github.com/weIlThought/kibi-the-pokemon-showdown-tooltip-helper/issues"><img src="https://img.shields.io/github/issues/your-repo/kibi?style=flat-square" alt="Issues"></a>
+  <a href="https://github.com/weIlThought/kibi-the-pokemon-showdown-tooltip-helper/pulls"><img src="https://img.shields.io/github/issues-pr/your-repo/kibi?style=flat-square" alt="Pull Requests"></a>
+  <img src="https://img.shields.io/badge/Browser-Chrome%2FOpera-lightgrey?style=flat-square" alt="Browser Support">
+</p>
+
 | 🇩🇪 Deutsch | 🇺🇸 English |
 |------------|------------|
 | **Kibi – Der Pokémon Showdown Tooltip Helfer**<br><img src="icons/icon128.png" height="100"> | **Kibi – The Pokémon Showdown Tooltip Helper**<br><img src="icons/icon128.png" height="100"> |
