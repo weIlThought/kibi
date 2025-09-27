@@ -17,9 +17,7 @@ export default async function enhancePokemonTooltip(
   tooltipContainer.innerHTML = tooltipHTML;
 
   const tooltipHeader = tooltipContainer.querySelector("h2");
-
   if (!tooltipHeader) {
-    Logger.debug("Could not find header in tooltip, skipping insert.");
     return tooltipHTML;
   }
 
@@ -33,6 +31,12 @@ export default async function enhancePokemonTooltip(
     .map((element: HTMLElement) => {
       tooltipContainer.insertBefore(element, tooltipHeader.nextSibling);
     });
+  const style = document.createElement("style");
+  style.textContent = `
+.tooltip, .tooltip-activepokemon { background-color: #444444 !important; color: #CCCCCC !important; }
+.tooltip * { color: inherit !important; }
+`;
+  tooltipContainer.insertBefore(style, tooltipContainer.firstChild);
 
   return tooltipContainer.innerHTML;
 }
