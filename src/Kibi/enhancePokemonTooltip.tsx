@@ -3,6 +3,7 @@ import TooltipAdditions from "./components/tooltipAdditions";
 import { Logger } from "./logger";
 import { TypesGroupedByDamageMultiplier } from "./types";
 import Pokedex from "pokedex-promise-v2";
+import { TYPE_CHART } from "./components/typesChart";
 
 const PokeAPI = new Pokedex();
 
@@ -45,35 +46,21 @@ export default async function enhancePokemonTooltip(
  * Calculates the total damage relations for the Pokemon.
  * @returns A map of each multiplier to the types affected.
  */
-async function getTypesGroupedByDamageMultiplier(
+export async function getTypesGroupedByDamageMultiplier(
   pokemon: Pokemon,
-): Promise<TypesGroupedByDamageMultiplier> {
-  return Array.from(
-    (
-      await Promise.all(
-        pokemon
-          .getTypeList()
-          .map((type) => PokeAPI.getTypeByName(type.toLowerCase())),
-      )
-    )
-      .map((type) => type.damage_relations)
-      .reduce((acc, damageRelation) => {
-        damageRelation["double_damage_from"].map((type) =>
-          acc.set(type.name, (acc.get(type.name) ?? 1) * 2),
-        );
-        damageRelation["half_damage_from"].map((type) =>
-          acc.set(type.name, (acc.get(type.name) ?? 1) * 0.5),
-        );
-        damageRelation["no_damage_from"].map((type) => acc.set(type.name, 0));
-
-        return acc;
-      }, new Map<string, number>())
-      .entries(),
-  ).reduce((acc, [type, multiplier]) => {
-    if (multiplier === 1) {
-      return acc;
+): Promise<Map<number, string[]>> {
+  const result = new Map<number, string[]>();
+  const targetTypes = pokemon.getTypeList().map(t => t.toLowerCase());
+  for (const attackingType of Object.keys(TYPE_CHART)) {
+    let multiplier = 1;
+    for (const targetType of targetTypes) {
+      const typeEffectiveness = TYPE_CHART[attackingType][targetType] ?? 1;
+      multiplier *= typeEffectiveness;
     }
-
-    return acc.set(multiplier, (acc.get(multiplier) ?? []).concat([type]));
-  }, new Map<number, string[]>());
+    if (multiplier !== 1) {
+      if (!result.has(multiplier)) result.set(multiplier, []);
+      result.get(multiplier)!.push(attackingType);
+    }
+  }
+  return result;
 }
