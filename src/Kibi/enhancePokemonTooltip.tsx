@@ -7,7 +7,7 @@ import { TYPE_CHART } from "./components/typesChart";
 
 const PokeAPI = new Pokedex();
 
-/**
+/*
  * Enhances a Pokemon Showdown tooltip with additional information.
  */
 export default async function enhancePokemonTooltip(
@@ -42,7 +42,7 @@ export default async function enhancePokemonTooltip(
   return tooltipContainer.innerHTML;
 }
 
-/**
+/*
  * Calculates the total damage relations for the Pokemon.
  * @returns A map of each multiplier to the types affected.
  */
@@ -50,7 +50,7 @@ export async function getTypesGroupedByDamageMultiplier(
   pokemon: Pokemon,
 ): Promise<Map<number, string[]>> {
   const result = new Map<number, string[]>();
-  const targetTypes = pokemon.getTypeList().map(t => t.toLowerCase());
+  const targetTypes = pokemon.getTypeList().map((t) => t.toLowerCase());
   for (const attackingType of Object.keys(TYPE_CHART)) {
     let multiplier = 1;
     for (const targetType of targetTypes) {
